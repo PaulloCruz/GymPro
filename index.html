@@ -9,21 +9,237 @@
     href="ginastica.png">
 </head>
 <body>
-    
 
-    
+    <br>
+    <script>document.write("ESSA É APENAS UMA BETA TESTE, COM FINS PARA TESTE! <br>by Paulo Santana da Cruz")</script>
+    <br>
+    <form>
+        <!-- barra de texto -->
+        <!-- <input type="text" placeholder="Digite aqui"> -->
+        <!-- botão -->
+        <!-- <input type="submit" value="Concluído"> -->
+
+      </form>
     <!-- <div style="background-image: url(https://i.imgur.com/RsL3Zlt.png);"> -->
-        <center><script src="GymPro.js"></script>
+        <!-- <script src="GymPro.js"></script> -->
+    <form>
+    <br>
+    <br>
+
+        <script>document.write("Digite o seu peso atual [Kg]:")</script>
+    <br>
+        <input type="text" placeholder="Digite aqui" id="peso">
+
+    <br>
+    <br>
+
+        <script>document.write("Digite o sua altura atual [Metros/Centimetros]:")</script>
+        <br>
+        <input type="text" placeholder="Digite aqui" id="altura">
+       
+    <br>
+    <br>
+
+        <script>document.write("Digite seu sexo [Feminino]/[Masculino]")</script>
+        <br>
+        <input type="text" placeholder="Digite aqui" id="sexo">
+     
+    <br>
+    <br>
+
+        <script>document.write("Digite sua idade [anos]:")</script>
+        <br>
+        <input type="text" placeholder="Digite aqui" id="idade">
+  
+  <script>var inputElement = document.getElementById("idade");
+  idade= parseInt (inputElement.value);</script>
+
+    <br>
+    <br>
+
+        <script>document.write(`Qual seu nível de atividade fisica:<br>[1] Sedentário<br>[2]Levemente ativo (exercício leve 1 a 3 dias por semana)<br>[3] Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por semana)<br>[4] Altamente ativo (exercício pesado de 5 a 6 dias por semana)<br>\t[4] Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)`)</script>
+        <br>
+        <input type="text" placeholder="Digite aqui" id="taxaAtvFisica">
+       
+
+    <br>  
+    <br>  
+
+        <script>document.write(`Qual seu objetivo:<br>[1] Manter saudável<br>[2] Hipertrofia (ganho de massa muscular)<br>[3] Emagrecer`)</script>
+        <br>
+        <input type="text" placeholder="Digite aqui" id="metaVida">
+   
+    <br>
+    <br>
+        <input type="submit" value="enviar">
+        
+    <br>
+        <script>
+        
+        var peso,altura,sexo,imc,qtdAgua=0,tmbF=0,tmbM=0,taxaAtvFisica,menu,idade,dados=0,validacao=0,contador=1,metaVida,proteinaDia,ObjetivoVida 
+
+
+//entrada de dados
+ 
+   
+
+var inputElement = document.getElementById("peso");
+        peso = (inputElement.value);
+
+    inputElement = document.getElementById("altura");
+        altura = (inputElement.value);
+
+    inputElement = document.getElementById("sexo");
+        sexo = (inputElement.value);
+        
+    inputElement = document.getElementById("idade");
+        idade = (inputElement.value);
+
+    inputElement = document.getElementById("taxaAtvFisica");
+        taxaAtvFisica = (inputElement.value);
+
+    inputElement = document.getElementById("metaVida");
+        metaVida = (inputElement.value);
+
+        console.log(peso)
+        console.log(altura)
+        console.log(sexo)
+        console.log(idade)
+        console.log(taxaAtvFisica)
+        console.log(metaVida)
+//Validação da Meta de vida
+metaVida = metaVida.toUpperCase()
+if (metaVida == '1'||metaVida=='MANTER'||metaVida=="MANTER SAUDAVEL"||metaVida=="MANTER SAUDÁVEL") {
+    metaVida=1
+    ObjetivoVida= "Manter saudável"
+}else if (metaVida == '2'||metaVida=='HIPERTROFIA') {
+    metaVida=2
+    ObjetivoVida= "Hipertrofia (ganho de massa muscular)"
+}else if (metaVida == '3'||metaVida=='EMAGRECER') {
+    metaVida=1.5
+    ObjetivoVida="Emagrecer"
+}else{
+    alert("ERROR, algo deu errado, tente novamente!, se o erro persistir reporte o erro ao nosso suporte!")
+   
+}
+metaVida = Number(metaVida)
+//validação altura
+
+if (altura>=100) {
+    altura = altura/100
+}else if (altura<0 || isNaN(altura)){
+
+    alert("ERROR, algo deu errado, tente novamente!, se o erro persistir reporte o erro ao nosso suporte!")
+  
+}
+
+//validação do sexo
+
+sexo = sexo.toUpperCase()
+if (sexo == "M"|| sexo == "MASCULINO") {
+    sexo = 1
+
+}else if (sexo == "F"|| sexo == "FEMININO") {
+    sexo = 2
+}else{
+    alert("ERROR, algo deu errado, tente novamente!, se o erro persistir reporte o erro ao nosso suporte!")
+    
+ }
+ //Saida de dados iniciais
+
+    document.write(`\t<br>Altura: ${altura} metros<br>`)
+    document.write(`\t<br>Idade: ${idade} anos<br>`)
+    document.write(`\t<br>Objetivo: ${ObjetivoVida}<br>`)
+
+ //validação taxa de atividade fisica
+
+ taxaAtvFisica = Number(taxaAtvFisica)
+ if (taxaAtvFisica == 1||taxaAtvFisica == 'SEDENTARIO' ||taxaAtvFisica== "SEDENTÁRIO") {
+    taxaAtvFisica = 1.2
+
+ }else if(taxaAtvFisica == 2||taxaAtvFisica =='LEVEMENTE ATIVO'||taxaAtvFisica=="LEVEMENTE"){
+    taxaAtvFisica= 1.375
+
+ }else if(taxaAtvFisica == 3||taxaAtvFisica =='MODERADAMENTE ATIVO'||taxaAtvFisica=="MODERADAMENTE"){
+    taxaAtvFisica= 1.55
+
+ }else if(taxaAtvFisica == 4||taxaAtvFisica =='ALTAMENTE ATIVO'||taxaAtvFisica=="ALTAMENTE"){
+    taxaAtvFisica= 1.725
+
+ }else if(taxaAtvFisica ==5 ||taxaAtvFisica =='EXTREMEMANTE'||taxaAtvFisica=="EXTREMAMENTE"){
+    taxaAtvFisica= 1.9
+ }else{
+    alert("ERROR, algo deu errado, tente novamente!, se o erro persistir reporte o erro ao nosso suporte!")
+    
+ }
+
+//IMC [IMC = peso / (altura x altura).]
+
+imc = peso / (altura*altura)
+imc= imc.toFixed(2)
+
+if (imc<17) {    
+document.write(`<br>\tImc:${imc} <br><br> Situação: Muito abaixo do peso<br>`)
+
+}else if (imc>=17 && imc<=18.49) {
+    document.write(`<br>\tPeso: ${peso}Kg<br><br>Imc:${imc} <br><br> Situação: Abaixo do peso<br>`)
+
+}else if (imc>=18,5 && imc<=24.99) {
+    document.write(`<br>\tPeso: ${peso}Kg<br><br>Imc:${imc} <br><br> Situação: Peso normal<br>`)
+
+}else if (imc>=25 && imc<=29.99) {
+    document.write(`<br>\tPeso: ${peso}Kg<br><br>Imc:${imc} <br><br> Situação: Acima do peso<br><br>`)
+
+}else if (imc>=30 && imc<=34.99) {
+    document.write(`<br>\tPeso: ${peso}Kg<br><br>Imc:${imc} <br><br> Situação: Obesidade I<br>`)
+
+}else if (imc>=35 && imc<=39.99) {
+    document.write(`<br>\tPeso: ${peso}Kg<br><br>Imc:${imc} <br><br> Situação: Obesidade II (severa)<br>`)
+
+}else if (imc>=40) {
+    document.write(`<br>\tPeso: ${peso}Kg<br><br>Imc:${imc} <br><br> Situação: Obesidade III (mórbida)<br>`)
+
+}else{
+    alert("ERROR, algo deu errado, tente novamente!, se o erro persistir reporte o erro ao nosso suporte!")
+    
+}
+ //Quantidade de agua por dia [multiplicar 35 ml pelo peso do seu corpo]
+
+
+qtdAgua = peso * 0.035
+qtdAgua=qtdAgua.toFixed(2)
+document.write(`<br>\tA quantidade de agua por dia que voce deve ingerir é de: ${qtdAgua} Litros<br>`)
+
+//TMB
+
+if(sexo == 1){//masculino
+    tmbM = taxaAtvFisica*(66+(13.7*peso)+(5*altura)-(6.8*idade))
+    tmbM = tmbM.toFixed(2)
+    document.write(`\t<br>Calorias por dia: ${tmbM}<br>`)
+}else if(sexo == 2){//feminino
+    tmbF = taxaAtvFisica*(655 + (9.6*peso)+(1.8*altura)-(4.7*idade))
+    tmbF = tmbF.toFixed(2)
+    document.write(`\t<br>Calorias por dia: ${tmbF}<br>`)
+}
+//Proteina por dia
+
+proteinaDia = metaVida *peso
+
+document.write(`<br>Proteina por dia: ${proteinaDia} gramas<br>`)
+
+ if (confirm("Deseja continuar?") == true) {
+    contador++
+ 
+} else {
+    
+}
+
+</script>
+    
     <br>
     
-    <br>    
-    
     <br>
-    
-    <br>
-    
-    <br>
-    
+     </form>
     <br>
     
     <br>
