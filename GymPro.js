@@ -119,7 +119,7 @@ document.write(`<br>\tImc:${imc} <br><br> Situação: Muito abaixo do peso<br>`)
  //Quantidade de agua por dia [multiplicar 35 ml pelo peso do seu corpo]
 
 
-qtdAgua = peso * 0.035
+qtdAgua = peso * 0.050
 qtdAgua=qtdAgua.toFixed(2)
 document.write(`<br>\tA quantidade de agua por dia que voce deve ingerir é de: ${qtdAgua} Litros<br>`)
 
